@@ -4,14 +4,7 @@ import axios from "axios";
 
 const MusicTable = (props) => {
 
-    useEffect(() => {
-        getAllSongs();
-      }, [])
     
-      async function getAllSongs(){
-        const response = await axios.get('http://127.0.0.1:8000/api/music/');
-        props.setSongs(response.data);
-      }
 
     return ( 
         <div>

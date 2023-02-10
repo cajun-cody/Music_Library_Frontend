@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MusicTable from './Components/MusicTable/MusicTable';
 import SearchBar from './Components/SearchBar/SearchBar';
+import NewSongForm from './Components/NewSongForm/NewSongForm.jsx';
 import axios from 'axios';
 
 
@@ -19,13 +20,21 @@ to other components */
 	const response = await axios.get('http://127.0.0.1:8000/api/music/');
 	setSongs(response.data);
   }
+
+  async function createSong(newSong){
+	let response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
+	if(response.status === 201){
+		await getAllSongs();
+	}
+  }
+
 /* Function to search through the songs list */
   function songResults(search) {
 	let filteredSongs = songs.filter((song) => {
-		if (song.title.toLowerCase().includes(search) || 
-			song.artist.toLowerCase().includes(search) ||
-			song.album.toLowerCase().includes(search) ||
-			song.genre.toLowerCase().includes(search) ){
+		if (song.title.includes(search) || 
+			song.artist.includes(search) ||
+			song.album.includes(search) ||
+			song.genre.includes(search) ){
 		return true;
 		}	
 	})
@@ -36,7 +45,7 @@ to other components */
     <div>
 		<SearchBar songResults= {songResults}/>
     	<MusicTable parentSongs={songs} />
-	  
+	  	<NewSongForm addNewSong={createSong}/>
     </div>
   );
 }

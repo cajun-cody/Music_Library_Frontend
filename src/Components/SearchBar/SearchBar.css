@@ -1,0 +1,23 @@
+
+
+.d-flex{
+    align-items: center;
+}
+
+input::placeholder{
+    font-style: italic;
+    color:white
+}
+
+input, textarea {
+    background-color: #635f5f;
+    color:white;
+  }
+
+.search-button{
+    margin-left: 25px;
+}
+
+.refresh-button{
+    margin-left: 25px;
+}

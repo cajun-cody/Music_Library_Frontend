@@ -1,0 +1,21 @@
+
+.container-1{
+    display: flex;
+    margin-left: 35px;
+}
+
+
+.container-body-1{
+    width: 20%;
+    color:#198754
+}
+
+.new-song-head{
+    color: rgb(49, 38, 212);
+}
+
+
+.new-song-btn{
+    margin-left: 10px;
+    margin-top: 10px;
+}

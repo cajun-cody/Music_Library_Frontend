@@ -2,10 +2,11 @@
 
 
 .container-table{
-    
     padding: 2px;
     display: grid;
     width: 100%;
+    margin-left: 35px;
+    margin-top: 25px;
 
 }
 
@@ -15,7 +16,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     color: white;
-    background-color: rgb(58, 57, 57);
+    background-color: rgb(75, 75, 78);
     font-size: 14;
 }
 
@@ -30,5 +31,6 @@
 
 .row{
     align-items: center;
+
 }
 

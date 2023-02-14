@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import './NewSong.css';
 
 
 const NewSongForm = (props) => {
@@ -23,29 +23,34 @@ const NewSongForm = (props) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Title</label>
-                <input type = 'text' value={songTitle} onChange={(event) => setSongTitle(event.target.value)}/>
-            </div>
-            <div>
-                <label>Artist</label>
-                <input type = 'text' value={songArtist} onChange={(event) => setSongArtist(event.target.value)}/>
-            </div>
-            <div>
-                <label>Album</label>
-                <input type = 'text' value={songAlbum} onChange={(event) => setSongAlbum(event.target.value)}/>
-            </div>
-            <div>
-                <label>Release Date</label>
-                <input type = 'text' value={songReleaseDate} onChange={(event) => setSongReleaseDate(event.target.value)}/>
-            </div>
-            <div>
-                <label>Genre</label>
-                <input type = 'text' value={songGenre} onChange={(event) => setSongGenre(event.target.value)}/>
-            </div>
-            <div>
-                <button type='submit'>Submit</button>
+        <form className="container-1 " onSubmit={handleSubmit}>
+            <div className="container-body-1">
+                <div>
+                    <h4 className="new-song-head">Add Song</h4>
+                </div>
+                <div class='row'>
+                    <label >Title</label>
+                    <input size='50' type = 'text' value={songTitle} onChange={(event) => setSongTitle(event.target.value)}/>
+                </div>
+                <div class='row'>
+                    <label>Artist</label>
+                    <input type = 'text' value={songArtist} onChange={(event) => setSongArtist(event.target.value)}/>
+                </div>
+                <div class='row'>
+                    <label>Album</label>
+                    <input type = 'text' value={songAlbum} onChange={(event) => setSongAlbum(event.target.value)}/>
+                </div>
+                <div class='row'>
+                    <label>Release Date</label>
+                    <input type = 'text' value={songReleaseDate} onChange={(event) => setSongReleaseDate(event.target.value)}/>
+                </div>
+                <div class='row'>
+                    <label>Genre</label>
+                    <input type = 'text' value={songGenre} onChange={(event) => setSongGenre(event.target.value)}/>
+                </div>
+                <div className="new-song-btn">
+                    <button class='btn btn-outline-success' type='submit'>Add New Song</button>
+                </div>
             </div>
         </form>
      );

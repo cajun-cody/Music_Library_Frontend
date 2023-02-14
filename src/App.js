@@ -33,10 +33,10 @@ to other components */
 /* Function to search through the songs list */
   function songResults(search) {
 	let filteredSongs = songs.filter((song) => {
-		if (song.title.includes(search) || 
-			song.artist.includes(search) ||
-			song.album.includes(search) ||
-			song.genre.includes(search) ){
+		if (song.title.toLowerCase().includes(search.toLowerCase()) || 
+			song.artist.toLowerCase().includes(search.toLowerCase()) ||
+			song.album.toLowerCase().includes(search.toLowerCase()) ||
+			song.genre.toLowerCase().includes(search.toLowerCase()) ){
 		return true;
 		}	
 	})
@@ -45,9 +45,7 @@ to other components */
 
   async function deleteSong(song){
 	let response = await axios.delete(`http://127.0.0.1:8000/api/music/${song.id}/`);
-	
 	getAllSongs();
-	
   }
  
   return (

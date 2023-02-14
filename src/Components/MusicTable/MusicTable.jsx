@@ -6,7 +6,7 @@ const MusicTable = (props) => {
     
 
     return ( 
-        <div className="container-fluid">
+        <div className="container-2">
             <div className="container-table" >
                 <div className='container-head'>
                     <div className="row">

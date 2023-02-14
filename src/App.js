@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import NavBar from './Components/NavBar/NavBar';
 import MusicTable from './Components/MusicTable/MusicTable';
 import SearchBar from './Components/SearchBar/SearchBar';
 import NewSongForm from './Components/NewSongForm/NewSongForm.jsx';
 import axios from 'axios';
+import './App.css';
 
 
 
@@ -40,12 +42,20 @@ to other components */
 	})
 	setSongs(filteredSongs)
   }
+
+  async function deleteSong(song){
+	let response = await axios.delete(`http://127.0.0.1:8000/api/music/${song.id}/`);
+	
+	getAllSongs();
+	
+  }
  
   return (
-    <div>
+    <div className='container-page'>
+		<NavBar/>
 		<SearchBar songResults= {songResults}/>
-    	<MusicTable parentSongs={songs} />
-	  	<NewSongForm addNewSong={createSong}/>
+		<NewSongForm addNewSong={createSong}/>
+    	<MusicTable parentSongs={songs} deleteSongProp={deleteSong}  />
     </div>
   );
 }

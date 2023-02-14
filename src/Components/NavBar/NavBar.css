@@ -1,0 +1,14 @@
+
+
+.container-fluid{
+    
+    padding-top:.5rem;
+    padding-bottom: .5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: rgb(49, 38, 212);
+}
